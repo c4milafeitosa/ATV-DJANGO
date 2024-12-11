@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Editar Reserva{% else %}Adicionar Reserva{% endif %}</title>
+</head>
+<body>
+    <h1>{% if object %}Editar Reserva{% else %}Adicionar Nova Reserva{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'reserva_list' %}">Cancelar</a>
+</body>
+</html>

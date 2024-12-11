@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Reserva</title>
+</head>
+<body>
+    <h1>Detalhes da Reserva</h1>
+    <p>Cliente: {{ object.nome_cliente }}</p>
+    <p>Quarto: {{ object.quarto }}</p>
+    <p>Data de Início: {{ object.data_inicio }}</p>
+    <p>Data de Término: {{ object.data_termino }}</p>
+    <a href="{% url 'reserva_update' object.pk %}">Editar</a> | 
+    <a href="{% url 'reserva_delete' object.pk %}">Excluir</a>
+    <br><br>
+    <a href="{% url 'reserva_list' %}">Voltar para a Lista de Reservas</a>
+</body>
+</html>

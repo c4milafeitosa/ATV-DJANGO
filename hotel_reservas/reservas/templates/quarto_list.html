@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Quartos</title>
+</head>
+<body>
+    <h1>Lista de Quartos</h1>
+    <a href="/">Voltar para a Página Inicial</a>
+    <br><br>
+    <ul>
+        {% for quarto in object_list %}
+            <li>
+                <a href="{{ quarto.get_absolute_url }}">{{ quarto }}</a>
+                (<a href="{% url 'quarto_update' quarto.pk %}">Editar</a> | 
+                <a href="{% url 'quarto_delete' quarto.pk %}">Excluir</a>)
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'quarto_create' %}">Adicionar Novo Quarto</a>
+</body>
+</html>

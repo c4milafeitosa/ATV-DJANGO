@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Quarto</title>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir o quarto "{{ object }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Exclusão</button>
+    </form>
+    <a href="{% url 'quarto_list' %}">Cancelar</a>
+</body>
+</html>

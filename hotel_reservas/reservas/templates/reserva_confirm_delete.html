@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Reserva</title>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir a reserva de "{{ object.nome_cliente }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Exclusão</button>
+    </form>
+    <a href="{% url 'reserva_list' %}">Cancelar</a>
+</body>
+</html>

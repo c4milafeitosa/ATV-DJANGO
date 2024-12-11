@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Reservas</title>
+</head>
+<body>
+    <h1>Lista de Reservas</h1>
+    <a href="/">Voltar para a Página Inicial</a>
+    <br><br>
+    <ul>
+        {% for reserva in object_list %}
+            <li>
+                <a href="{{ reserva.get_absolute_url }}">{{ reserva }}</a>
+                (<a href="{% url 'reserva_update' reserva.pk %}">Editar</a> | 
+                <a href="{% url 'reserva_delete' reserva.pk %}">Excluir</a>)
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'reserva_create' %}">Adicionar Nova Reserva</a>
+</body>
+</html>
